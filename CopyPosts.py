@@ -62,17 +62,17 @@ def split_text(text, max_length=10000):
     chunks.append(text)  # Add the remaining text
     return chunks
 
-# Source subreddit
-source_subreddit = ufos_reddit.subreddit('ufos')
+# Source subreddit - replace with your subreddit
+source_subreddit = ufos_reddit.subreddit('Soure')
 
-# Destination subreddit
-destination_subreddit = archives_reddit.subreddit('UFOs_Archives')
+# Destination subreddit - replace with your subreddit
+destination_subreddit = archives_reddit.subreddit('destination')
 
 # Get the current time and calculate the time 30 minutes ago
 current_time = datetime.now(timezone.utc)
 time_30_minutes_ago = current_time - timedelta(minutes=14)
 
-# Iterate over new submissions in the 'ufos' subreddit with no limit
+# Iterate over new submissions in the subreddit with no limit
 for submission in source_subreddit.new():
     try:
         # Log submission details for debugging
